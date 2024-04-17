@@ -1,0 +1,168 @@
+/* Genel Stil Ayarları ve Font Optimizasyonu */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ana Menü ve Oyun Sonucu Sütunu Stili */
+#mainMenu, #result-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    transition: transform 0.3s ease;
+}
+
+#mainMenu:hover, #result-container:hover {
+    transform: translate(-50%, -50%) scale(1.02);
+}
+
+/* Başlık Stilleri */
+h1, h2 {
+    color: #4CAF50;
+    margin: 0.5em 0;
+}
+
+/* Buton Stilleri */
+.button, .answerButton, .menuButton {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.button:hover, .answerButton:hover, .menuButton:hover {
+    background-color: #367c39;
+    color: #fff;
+}
+
+/* Geri Bildirim */
+#feedback {
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Sonraki Soru Butonu */
+#next-question {
+    margin-top: 20px;
+    width: auto;
+    padding: 10px 20px;
+}
+
+/* Geri Sayım Çemberi ve Metni */
+#countdown-circle, #countdown-text {
+    transform: rotate(0deg);
+    font-weight: bold;
+}
+
+/* Arkadaşına Sor Butonu Hover */
+#ask-friend:hover {
+    background-color: #FFDF00;
+    color: #333;
+}
+
+/* Bilgi Sütunu Tasarımı */
+#info-column {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+/* Responsive Tasarım */
+@media only screen and (max-width: 600px) {
+    #mainMenu, #result-container, #info-column {
+        max-width: 90%;
+        width: auto;
+    }
+
+    .button, .answerButton, .menuButton {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #feedback, #countdown-text {
+        font-size: 14px;
+    }
+}
+
+/* Animasyonlar */
+@keyframes finalCountdownAnimation {
+    0%, 100% { font-size: 20px; color: #333; }
+    50% { font-size: 24px; color: #FF5733; }
+}
+
+@keyframes blinkAnimation {
+    0%, 100% { stroke: #FF5733; }
+    50% { stroke: #FFC0CB; }
+}
+
+.final-countdown-text {
+    animation: finalCountdownAnimation 1s infinite;
+}
+
+.final-countdown-circle {
+    animation: blinkAnimation 1s infinite;
+}
+/* Doğru ve Yanlış Cevap Stilleri */
+.correct {
+    background-color: #4CAF50 !important; /* Yeşil */
+    color: white !important;
+}
+
+.wrong {
+    background-color: #f44336 !important; /* Kırmızı */
+    color: white !important;
+}
+.container {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px; /* İçeriğin çok geniş ekranlarda aşırı genişlemesini önler */
+}
+@media only screen and (max-width: 600px) {
+    .menuButton {
+        padding: 12px 24px; /* Mobil cihazlarda buton boyutunu artır */
+    }
+    h1 {
+        font-size: 20px; /* Başlık boyutunu azalt */
+    }
+}
+.button {
+    min-width: 48px; /* Minimum dokunma alanı */
+    min-height: 48px; /* Minimum dokunma alanı */
+    margin: 12px; /* Butonlar arası boşluk */
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* İçerikleri yatay olarak ortala */
+}
